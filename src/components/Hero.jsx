@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import assets from "../assets/assets"
 
 /* ================= HERO SLIDES ================= */
 const slides = [
   {
     image:
-      "https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=1600",
+      assets.banner1,
     headline: "Where Truth Meets Transformation",
     subtext:
       "At Satya, we don’t sell dreams — we restore them. Every result here is built on ethics, artistry, and medical science that stands the test of time.",
@@ -13,7 +14,7 @@ const slides = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1600",
+      assets.banner2,
     headline: "Reclaim What You Thought You Lost",
     subtext:
       "From thinning crowns to receding hairlines — we restore your confidence with techniques that preserve your donor, your health, and your natural identity.",
@@ -21,7 +22,7 @@ const slides = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1618498082410-b4aa22193b38?q=80&w=1600",
+      assets.banner3,
     headline: "We Fix What Others Couldn’t",
     subtext:
       "Thousands come to Satya after failed or unnatural procedures. Our world-recognized repair expertise revives damaged donors, uneven hairlines, and lost trust.",
@@ -29,28 +30,13 @@ const slides = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1600",
+      assets.banner4,
     headline: "Skin That Reflects the Best of You",
     subtext:
       "Erase years of dullness, acne scars, and pigmentation with dermatologist-led solutions — designed for glow that feels natural, not forced.",
     cta: "Discover Skin Treatments",
   },
-  {
-    image:
-      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1600",
-    headline: "Look Fresh. Stay You.",
-    subtext:
-      "Subtle enhancements with Botox, fillers, and regenerative therapies that don’t change who you are — they restore who you’ve always been.",
-    cta: "Hear What Patients Say",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=1600",
-    headline: "Truth Is the New Luxury",
-    subtext:
-      "In a world full of filters and overpromises, we built a medical practice on honesty. Every treatment starts with one principle — do what’s right for the patient.",
-    cta: "Meet Our Founders",
-  },
+ 
 ];
 
 /* ================= HERO COMPONENT ================= */

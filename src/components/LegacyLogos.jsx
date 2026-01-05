@@ -1,44 +1,44 @@
 import { useEffect, useRef } from "react";
+import assets from "../assets/assets";
 
 const LOGOS = [
   {
+    image: assets.logo1,
     name: "ISHRS",
     full: "International Society of Hair Restoration Surgery",
     hover:
-      "Member of ISHRS – advancing the art and science of hair restoration globally.",
+      "Proud member of ISHRS, the global authority advancing excellence and ethics in hair restoration surgery.",
   },
   {
+    image: assets.logo2,
+    name: "IAHRS",
+    full: "International Alliance of Hair Restoration Surgeons",
+    hover:
+      "Recognized by IAHRS, an elite association representing the world’s top hair restoration surgeons.",
+  },
+  {
+    image: assets.logo3,
+    name: "ACSI",
+    full: "Association of Cutaneous Surgeons of India",
+    hover:
+      "Affiliated with ACSI, India’s leading body for advanced dermatosurgery and aesthetic procedures.",
+  },
+  {
+    image: assets.logo4,
     name: "AAAM",
     full: "American Academy of Aesthetic Medicine",
     hover:
-      "Certified by AAAM for advanced aesthetic and cosmetic medicine excellence.",
+      "Certified by AAAM for advanced aesthetic, cosmetic, and anti-aging medical practices.",
   },
   {
-    name: "AIMI",
-    full: "Associazione Italiana Medici Implantologi",
-    hover:
-      "International affiliation with Italy’s leading hair implantology society.",
-  },
-  {
+    image: assets.logo5,
     name: "IADVL",
-    full:
-      "Indian Association of Dermatologists, Venereologists & Leprologists",
+    full: "Indian Association of Dermatologists, Venereologists & Leprologists",
     hover:
-      "Registered and certified by IADVL for dermatological expertise and ethical care.",
-  },
-  {
-    name: "CDSI",
-    full: "Cosmetic Dermatology Society, India",
-    hover:
-      "Recognized member of CDSI, promoting safe and scientific skin aesthetics.",
-  },
-  {
-    name: "ACD",
-    full: "Association of Cutaneous Surgeons of India",
-    hover:
-      "Accredited by ACD for excellence in clinical and procedural dermatology.",
+      "Registered member of IADVL, ensuring ethical, scientific, and clinically proven dermatological care.",
   },
 ];
+
 
 export default function LegacyLogos() {
   const trackRef = useRef(null);
@@ -80,10 +80,7 @@ export default function LegacyLogos() {
           <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-[#FFF8EF] to-transparent z-10" />
 
           <div className="overflow-hidden">
-            <div
-              ref={trackRef}
-              className="flex gap-6 w-max py-4"
-            >
+            <div ref={trackRef} className="flex gap-6 w-max py-4">
               {[...LOGOS, ...LOGOS].map((logo, index) => (
                 <LogoItem key={index} {...logo} />
               ))}
@@ -104,12 +101,16 @@ export default function LegacyLogos() {
 }
 
 /* ================= SINGLE LOGO ================= */
-function LogoItem({ name, full, hover }) {
+function LogoItem({ image, name, full, hover }) {
   return (
     <div className="group relative min-w-[220px] sm:min-w-[260px] bg-[#FCEBDE] border border-[#DFDFDD] rounded-2xl px-6 py-6 text-center transition hover:border-[#9E4A47]">
-      {/* SHORT LOGO */}
-      <div className="text-2xl font-bold text-[#2B333C] mb-1">
-        {name}
+      {/* IMAGE LOGO */}
+      <div className="h-14 flex items-center justify-center mb-3">
+        <img
+          src={image}
+          alt={name}
+          className="max-h-full max-w-[140px] object-contain"
+        />
       </div>
 
       {/* FULL NAME */}
@@ -118,7 +119,7 @@ function LogoItem({ name, full, hover }) {
       </div>
 
       {/* HOVER OVERLAY */}
-      <div className="absolute inset-0 bg-[#9E4A47] text-[#FFF8EF] rounded-2xl p-6 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-sm leading-relaxed">
+      <div className="absolute inset-0 bg-[#9E4A47] text-[#FFF8EF] rounded-2xl p-6 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-sm leading-relaxed text-center">
         {hover}
       </div>
     </div>
